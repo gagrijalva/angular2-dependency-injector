@@ -9,28 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var heroes_component_1 = require('./heroes/heroes.component');
-var logger_service_1 = require('./logger.service');
-var user_service_1 = require('./user.service');
-var app_config_1 = require('./app-config');
-var app_config_2 = require('./app-config');
-var AppComponent = (function () {
-    function AppComponent() {
+var hero_list_component_1 = require('./hero-list.component');
+var hero_service_provider_1 = require('./hero.service.provider');
+var HeroesComponent = (function () {
+    function HeroesComponent() {
     }
-    AppComponent = __decorate([
+    HeroesComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>My First Angular 2 App</h1>\n             <my-heroes></my-heroes>\n  ",
-            directives: [heroes_component_1.HeroesComponent],
-            providers: [
-                logger_service_1.Logger,
-                user_service_1.UserService,
-                { provide: app_config_1.APP_CONFIG, useValue: app_config_2.HERO_DI_CONFIG }
-            ]
+            selector: 'my-heroes',
+            template: "\n  <h2>Heroes</h2>\n  <hero-list></hero-list>\n  ",
+            providers: [hero_service_provider_1.heroServiceProvider],
+            directives: [hero_list_component_1.HeroListComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HeroesComponent);
+    return HeroesComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HeroesComponent = HeroesComponent;
+//# sourceMappingURL=heroes.component.js.map
